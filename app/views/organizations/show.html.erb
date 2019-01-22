@@ -1,0 +1,15 @@
+<% if current_user %>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Organization name:</strong>
+  <%= @organization.Organization_name %>
+</p>
+
+<p>
+  <strong>Type of organization:</strong>
+  <%= @organization.Type_of_organization %>
+</p>
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>
+<% end %>

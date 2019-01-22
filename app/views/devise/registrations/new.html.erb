@@ -11,7 +11,10 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
+  <div class="field">
+    <%= f.label :organization %><br />
+    <%= collection_select(:organizations, :id, Organization.all, :id, :Organization_name, {:multiple => true}) %>
+  </div>
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>

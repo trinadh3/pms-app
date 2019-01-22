@@ -7,7 +7,7 @@ class TasksController < ApplicationController
     @project = Project.find(params[:project_id])
     @tasks = @project.tasks.order('id DESC')
     respond_to do |format|
-      format.html 
+      format.html # index.html.erb
       format.json { render json: @tasks }
     end
   end
@@ -15,6 +15,7 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+
   end
 
   # GET /tasks/new
@@ -30,11 +31,9 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
-
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
-        format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }

@@ -21,7 +21,7 @@
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
        <li>
-        <li><%= link_to "My project", new_project_path%></li>
+        <li><%= link_to "My project", projects_path%></li>
         <li><%= link_to "Edit Profile", edit_user_registration_path%></li>
         <li><%= link_to "Signout", destroy_user_session_path, :method => :delete %></li>
        </li>
